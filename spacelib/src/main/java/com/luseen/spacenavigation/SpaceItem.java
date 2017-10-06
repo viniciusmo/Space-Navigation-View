@@ -23,10 +23,16 @@ public class SpaceItem implements Serializable {
     private String itemName;
 
     private int itemIcon;
+    private int itemInactive;
 
-    public SpaceItem(String itemName, int itemIcon) {
+    public SpaceItem(String itemName, int itemIcon,int itemSelected) {
         this.itemName = itemName;
         this.itemIcon = itemIcon;
+        this.itemInactive = itemSelected;
+    }
+
+    public int getItemInactive() {
+        return itemInactive;
     }
 
     String getItemName() {

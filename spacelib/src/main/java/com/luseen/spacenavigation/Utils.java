@@ -16,8 +16,6 @@
  */
 package com.luseen.spacenavigation;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.ArgbEvaluator;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
@@ -29,15 +27,8 @@ import android.widget.ImageView;
 
 class Utils {
 
-    /**
-     * Change given image view tint
-     *
-     * @param imageView target image view
-     * @param color     tint color
-     */
-    static void changeImageViewTint(ImageView imageView, int color) {
-        imageView.setColorFilter(color);
-    }
+
+
 
     /**
      * Change view visibility

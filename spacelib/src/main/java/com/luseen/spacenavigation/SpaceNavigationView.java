@@ -494,10 +494,10 @@ public class SpaceNavigationView extends RelativeLayout {
              */
             if (i == currentSelectedItem) {
                 spaceItemText.setTextColor(activeSpaceItemColor);
-                Utils.changeImageViewTint(spaceItemIcon, activeSpaceItemColor);
+                spaceItemIcon.setImageResource(spaceItems.get(i).getItemIcon());
             } else {
                 spaceItemText.setTextColor(inActiveSpaceItemColor);
-                Utils.changeImageViewTint(spaceItemIcon, inActiveSpaceItemColor);
+                spaceItemIcon.setImageResource(spaceItems.get(i).getItemInactive());
             }
 
             textAndIconContainer.setOnClickListener(new OnClickListener() {
@@ -572,18 +572,20 @@ public class SpaceNavigationView extends RelativeLayout {
          * Change active and inactive icon and text color
          */
         for (int i = 0; i < spaceItemList.size(); i++) {
+            SpaceItem item = spaceItems.get(i);
+
             if (i == selectedIndex) {
                 RelativeLayout textAndIconContainer = (RelativeLayout) spaceItemList.get(selectedIndex);
                 ImageView spaceItemIcon = (ImageView) textAndIconContainer.findViewById(R.id.space_icon);
                 TextView spaceItemText = (TextView) textAndIconContainer.findViewById(R.id.space_text);
                 spaceItemText.setTextColor(activeSpaceItemColor);
-                Utils.changeImageViewTint(spaceItemIcon, activeSpaceItemColor);
+                spaceItemIcon.setImageResource(item.getItemIcon());
             } else if (i == currentSelectedItem) {
                 RelativeLayout textAndIconContainer = (RelativeLayout) spaceItemList.get(i);
                 ImageView spaceItemIcon = (ImageView) textAndIconContainer.findViewById(R.id.space_icon);
                 TextView spaceItemText = (TextView) textAndIconContainer.findViewById(R.id.space_text);
                 spaceItemText.setTextColor(inActiveSpaceItemColor);
-                Utils.changeImageViewTint(spaceItemIcon, inActiveSpaceItemColor);
+                spaceItemIcon.setImageResource(item.getItemInactive());
             }
         }
 

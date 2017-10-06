@@ -28,11 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
-        spaceNavigationView.addSpaceItem(new SpaceItem("HOME", R.drawable.account));
-        spaceNavigationView.addSpaceItem(new SpaceItem("SEARCH", R.drawable.magnify));
-        spaceNavigationView.shouldShowFullBadgeText(true);
+        spaceNavigationView.addSpaceItem(new SpaceItem("HOME", R.drawable.near_me,R.drawable.near_me));
         spaceNavigationView.setCentreButtonIconColorFilterEnabled(false);
-
+        spaceNavigationView.showIconOnly();
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {

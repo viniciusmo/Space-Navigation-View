@@ -14,9 +14,13 @@
 
     <com.luseen.spacenavigation.SpaceNavigationView
         android:id="@+id/space"
+        app:centre_button_icon="@drawable/ic_add"
         android:layout_width="match_parent"
+        app:space_item_icon_only_size="32dp"
+        app:space_item_icon_size="32dp"
+        app:space_background_color="@color/whiteNew"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:centre_part_linear="true"
+        app:centre_part_linear="false"
         app:layout_behavior="com.luseen.spacenavigation.SpaceNavigationViewBehavior" />
 </android.support.design.widget.CoordinatorLayout>
