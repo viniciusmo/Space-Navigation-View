@@ -14,7 +14,6 @@
 
     <com.luseen.spacenavigation.SpaceNavigationView
         android:id="@+id/space"
-        app:centre_button_icon="@drawable/ic_add"
         android:layout_width="match_parent"
         app:space_item_icon_only_size="32dp"
         app:space_item_icon_size="32dp"
