@@ -20,6 +20,6 @@
         app:space_background_color="@color/whiteNew"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:centre_part_linear="false"
+        app:centre_part_linear="true"
         app:layout_behavior="com.luseen.spacenavigation.SpaceNavigationViewBehavior" />
 </android.support.design.widget.CoordinatorLayout>

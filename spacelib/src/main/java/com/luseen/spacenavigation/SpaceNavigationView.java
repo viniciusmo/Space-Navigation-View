@@ -378,6 +378,7 @@ public class SpaceNavigationView extends RelativeLayout {
          * Adding views to mainView
          */
         addView(centreBackgroundView, centreBackgroundViewParams);
+        LayoutInflater.from(context).inflate(R.layout.shadow_view,this,true);
         addView(centreContent, centreContentParams);
         addView(mainContent, mainContentParams);
 
@@ -390,6 +391,7 @@ public class SpaceNavigationView extends RelativeLayout {
          * Adding current space items to left and right content
          */
         addSpaceItems(leftContent, rightContent);
+
     }
 
     /**
