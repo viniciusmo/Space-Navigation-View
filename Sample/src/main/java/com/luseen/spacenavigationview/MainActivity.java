@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<String> dummyStrings() {
         List<String> colorList = new ArrayList<>();
-        colorList.add("#ffffff");
+        colorList.add("#f4ebfb");
         return colorList;
     }
 }
