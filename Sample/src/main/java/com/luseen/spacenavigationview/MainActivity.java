@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         spaceNavigationView.addSpaceItem(new SpaceItem("Ajuda", R.drawable.ajuda_ativo_space, R.drawable.ajuda_inativo_space));
         spaceNavigationView.addSpaceItem(new SpaceItem("Perfil", R.drawable.perfil_ativo_space, R.drawable.perfil_inativo_space));
         spaceNavigationView.setCentreButtonIconColorFilterEnabled(false);
+        spaceNavigationView.setActiveSpaceItemColor(ContextCompat.getColor(this,R.color.default_inactive_item_color));
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
             public void onCentreButtonClick() {
