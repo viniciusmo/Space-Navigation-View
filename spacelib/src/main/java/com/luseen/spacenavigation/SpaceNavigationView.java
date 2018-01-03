@@ -287,14 +287,6 @@ public class SpaceNavigationView extends RelativeLayout {
         centreContent = buildBezierView();
 
         centreButton = new CentreButton(context);
-        centreButton.setSize(FloatingActionButton.SIZE_NORMAL);
-        centreButton.setUseCompatPadding(false);
-        centreButton.setRippleColor(centreButtonRippleColor);
-        centreButton.setBackgroundTintList(ColorStateList.valueOf(centreButtonColor));
-        centreButton.setImageResource(centreButtonIcon);
-
-        if (isCentreButtonIconColorFilterEnabled || isCentreButtonSelectable)
-            centreButton.getDrawable().setColorFilter(inActiveCentreButtonIconColor, PorterDuff.Mode.SRC_IN);
 
         centreButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -542,33 +534,7 @@ public class SpaceNavigationView extends RelativeLayout {
             return;
         }
 
-        if (isCentreButtonSelectable) {
-            /**
-             * Selects the centre button as current
-             */
-            if (selectedIndex == -1) {
-                if (centreButton != null) {
-                    centreButton.getDrawable().setColorFilter(activeCentreButtonIconColor, PorterDuff.Mode.SRC_IN);
 
-                    if (activeCentreButtonBackgroundColor != NOT_DEFINED) {
-                        centreButton.setBackgroundTintList(ColorStateList.valueOf(activeCentreButtonBackgroundColor));
-                    }
-                }
-            }
-
-            /**
-             * Removes selection from centre button
-             */
-            if (currentSelectedItem == -1) {
-                if (centreButton != null) {
-                    centreButton.getDrawable().setColorFilter(inActiveCentreButtonIconColor, PorterDuff.Mode.SRC_IN);
-
-                    if (activeCentreButtonBackgroundColor != NOT_DEFINED) {
-                        centreButton.setBackgroundTintList(ColorStateList.valueOf(centreButtonColor));
-                    }
-                }
-            }
-        }
 
         /**
          * Change active and inactive icon and text color
@@ -684,7 +650,6 @@ public class SpaceNavigationView extends RelativeLayout {
 
             if (restoredBundle.containsKey(CENTRE_BUTTON_ICON_KEY)) {
                 centreButtonIcon = restoredBundle.getInt(CENTRE_BUTTON_ICON_KEY);
-                centreButton.setImageResource(centreButtonIcon);
             }
 
             if (restoredBundle.containsKey(SPACE_BACKGROUND_COLOR_KEY)) {
@@ -1036,20 +1001,6 @@ public class SpaceNavigationView extends RelativeLayout {
         isCentreButtonIconColorFilterEnabled = enabled;
     }
 
-    /**
-     * Change centre button icon if space navigation already set up
-     *
-     * @param icon Target icon to change
-     */
-    public void changeCenterButtonIcon(int icon) {
-        if (centreButton == null) {
-            Log.e(TAG, "You should call setCentreButtonIcon() instead, " +
-                    "changeCenterButtonIcon works if space navigation already set up");
-        } else {
-            centreButton.setImageResource(icon);
-            centreButtonIcon = icon;
-        }
-    }
 
     /**
      * Change item icon if space navigation already set up
